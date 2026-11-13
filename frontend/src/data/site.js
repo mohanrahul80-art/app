@@ -1,8 +1,8 @@
 const u = (id) => `https://images.unsplash.com/${id}?q=85&w=1600&auto=format&fit=crop`;
 
 export const CONTACT = {
-  phone: "+91 98200 12345",
-  email: "info@coveredge.in",
+  phone: "+91 9967399430",
+  email: "info@coveredgemarketing.com",
   hours: "Mon–Sat · 09:00–19:00 IST",
 };
 

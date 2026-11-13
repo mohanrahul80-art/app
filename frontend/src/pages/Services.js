@@ -58,6 +58,56 @@ export default function Services() {
         </section>
       ))}
 
+      <section id="cool-cold-storage" data-testid="cold-storage-section" className="border-t border-line bg-coal/30 scroll-mt-24">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24">
+          <Reveal y={16}>
+            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">
+              Warehousing Solutions · Specialist facility
+            </p>
+          </Reveal>
+          <h2 className="mt-4 font-display uppercase leading-[0.95] text-4xl sm:text-6xl">
+            <MaskLine>Cool &amp; cold storage,</MaskLine>
+            <MaskLine delay={0.12}>
+              <span className="text-steel">
+                held at <span className="text-ember">temperature.</span>
+              </span>
+            </MaskLine>
+          </h2>
+          <Reveal delay={0.15}>
+            <p className="mt-6 max-w-2xl text-steel leading-relaxed">
+              Dedicated cool and cold chambers inside our warehouses keep temperature-sensitive goods —
+              food &amp; beverage, pharma and cosmetics — stable from dock-in to despatch, with monitored
+              chambers, segregated racking and cold-chain despatch discipline.
+            </p>
+          </Reveal>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {[
+              ["Cold storage", "0°C to 8°C", "Food & beverage, fresh produce, pharma"],
+              ["Cool storage", "8°C to 15°C", "Chocolates, confectionery, cosmetics"],
+              ["Ambient cool", "15°C to 25°C", "Packaged foods, nutraceuticals, electronics"],
+            ].map(([name, range, goods], i) => (
+              <Reveal key={name} delay={0.07 * i}>
+                <div data-testid={`cold-storage-card-${i}`} className="h-full rounded-2xl border border-line bg-coal p-6 sm:p-8 hover:border-ember/60 transition-colors duration-300">
+                  <span className="h-3 w-3 rotate-45 bg-ember inline-block" />
+                  <h3 className="mt-4 font-display uppercase text-2xl text-bone">{name}</h3>
+                  <p className="mt-2 font-mono text-lg text-ember tracking-[0.1em]">{range}</p>
+                  <p className="mt-3 text-sm text-steel leading-relaxed">{goods}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <Reveal delay={0.2} className="mt-10 rounded-2xl border border-dashed border-line bg-ink/40 px-6 py-5">
+            <p className="text-sm text-steel leading-relaxed">
+              Chambers across the network are held within these bands with round-the-clock monitoring.
+              Have a product that sits outside them — or tighter tolerances? Tell us through the enquiry
+              form and the hub team will confirm the exact chamber specs available for your cargo.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="border-t border-line relative overflow-hidden">
         <div aria-hidden className="absolute bottom-[-40%] right-[-10%] h-[420px] w-[620px] rounded-full bg-ember/15 blur-[140px]" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-24">

@@ -38,7 +38,14 @@ Build a website for a 3rd-party logistics (3PL) company using the attached logo 
 - Global: sticky glass nav with mobile overlay menu, footer, lenis smooth scroll, scroll-to-top on route change, ErrorBoundary, film-grain overlay, favicon SVG, page titles, data-testids throughout.
 - Verified: curl POST/GET enquiries (201 + reference, no `_id` leak, 422 on bad email); screenshot passes on desktop 1440 & mobile 390 for all 5 pages; live form submission flow captured (ref CE-6196DC).
 
+## Implemented (2026-11-13, round 2)
+- Real contact details everywhere: +91 9967399430, info@coveredgemarketing.com (nav badge, contact cards, footer, page headers). Hours placeholder retained (Mon–Sat 09:00–19:00 IST).
+- Email alerts on new enquiry via Emergent-managed Resend: POST /api/enquiries fires a non-blocking `notify_enquiry` task → formatted HTML alert to OWNER_EMAIL (info@coveredgemarketing.com), from_name "CoverEdge Marketing Pvt. Ltd", reply-to set to owner inbox. Guardrail gate (`_assert_safe_email`) on every send. Env keys in backend/.env (EMERGENT_EMAIL_KEY, EMAIL_FROM_NAME, EMAIL_REPLY_TO, OWNER_EMAIL). httpx added to requirements.
+- Twelve-service list replaced the placeholder five across Home bento (12-cell aligned grid + feature tile), Services page (12 anchored sections + anchor scroll support), marquee, enquiry dropdown, stats (12 service lines), About/Footer copy.
+- Cool & cold storage highlighted block on Services page: three chamber bands (Cold 0–8°C, Cool 8–15°C, Ambient cool 15–25°C) with typical goods + spec-confirmation note. Bands are DRAFT placeholders pending the company's actual ranges.
+- Verified: two test enquiries fired email sends (HTTP 202 Accepted); cold storage block renders clean at desktop; contact details confirmed in DOM on nav, cards and footer.
+
 ## Backlog
-- P0: Replace placeholder phone (+91 98200 12345), email (info@coveredge.in), working hours with real details (edit `frontend/src/data/site.js`).
-- P1: Correct city spelling if needed ("Siliguri" used; user brief wrote "Silliguri"). Real warehouse addresses + a map embed per hub. Enquiry inbox/admin view to read submissions.
-- P2: Email notification on new enquiry (Resend), testimonials/clients section once real quotes exist, SEO sitemap + OG images.
+- P0: Send the real cool/cold temperature bands to replace the drafted 0–8°C / 8–15°C / 15–25°C ranges.
+- P1: Real warehouse addresses + a map embed per hub. Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.
+- P2: Testimonials/clients section once real quotes exist, SEO sitemap + OG images.

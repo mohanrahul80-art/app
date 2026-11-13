@@ -41,7 +41,7 @@ const ICONS = {
   ArrowRightLeft,
   Cpu,
 };
-const MARQUEE = SERVICES.map((s) => s.short);
+const MARQUEE = [...SERVICES.map((s) => s.short), "Cool & Cold Storage"];
 
 const STATS = [
   ["Established", "2012"],

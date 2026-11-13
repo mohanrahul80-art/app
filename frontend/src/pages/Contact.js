@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { CheckCircle2, Clock, Mail, Phone, Send } from "lucide-react";
+import { CheckCircle2, Clock, Mail, MapPin, Phone, Send } from "lucide-react";
 import PageHeader from "../components/PageHeader";
 import { Reveal } from "../components/Reveal";
 import { CONTACT, HUBS, SERVICES } from "../data/site";
@@ -173,6 +173,7 @@ export default function Contact() {
               [Phone, "Call us", CONTACT.phone, `tel:${CONTACT.phone.replace(/\s/g, "")}`, "contact-phone-card"],
               [Mail, "Write to us", CONTACT.email, `mailto:${CONTACT.email}`, "contact-email-card"],
               [Clock, "Working hours", CONTACT.hours, null, "contact-hours-card"],
+              [MapPin, "Head office & warehouse — Bhiwandi", CONTACT.headOffice, null, "contact-address-card"],
             ].map(([Icon, label, value, href, id]) => (
               <Reveal key={label}>
                 <div data-testid={id} className="rounded-2xl border border-line bg-coal p-6 flex items-start gap-4 hover:border-ember/60 transition-colors duration-300">
@@ -208,6 +209,19 @@ export default function Contact() {
             </Reveal>
 
             <Reveal delay={0.15}>
+              <div className="overflow-hidden rounded-2xl border border-line" data-testid="contact-map-card">
+                <iframe
+                  src="https://www.google.com/maps?q=19.260723733379848,73.04901796515453&z=14&output=embed"
+                  title="CoverEdge Marketing — Head Office, Bhiwandi"
+                  data-testid="contact-map"
+                  className="w-full h-56 grayscale-[0.4] invert-[0.92] hue-rotate-180"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.2}>
               <p className="text-xs text-steel leading-relaxed px-2">
                 Prefer email? Skip the form — every message lands with the same team that runs the
                 floors.

@@ -45,7 +45,11 @@ Build a website for a 3rd-party logistics (3PL) company using the attached logo 
 - Cool & cold storage highlighted block on Services page: three chamber bands (Cold 0–8°C, Cool 8–15°C, Ambient cool 15–25°C) with typical goods + spec-confirmation note. Bands are DRAFT placeholders pending the company's actual ranges.
 - Verified: two test enquiries fired email sends (HTTP 202 Accepted); cold storage block renders clean at desktop; contact details confirmed in DOM on nav, cards and footer.
 
+## Implemented (2026-11-13, round 3)
+- Bhiwandi head office address added: Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India.
+- Live Google map embed (coords 19.2607, 73.0490, dark-styled) in a "Find the head office" block on the Warehouses page + compact map on the Contact page; "Get directions" link added; address shown on the Bhiwandi hub card and Contact address card.
+
 ## Backlog
 - P0: Send the real cool/cold temperature bands to replace the drafted 0–8°C / 8–15°C / 15–25°C ranges.
-- P1: Real warehouse addresses + a map embed per hub. Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.
+- P1: Nagpur, New Delhi and Siliguri warehouse addresses + map pins (same pattern as Bhiwandi). Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.
 - P2: Testimonials/clients section once real quotes exist, SEO sitemap + OG images.

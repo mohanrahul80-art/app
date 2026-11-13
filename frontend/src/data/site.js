@@ -4,6 +4,16 @@ export const CONTACT = {
   phone: "+91 9967399430",
   email: "info@coveredgemarketing.com",
   hours: "Mon–Sat · 09:00–19:00 IST",
+  headOffice:
+    "CoverEdge Marketing Pvt. Ltd, Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India",
+};
+
+export const BHIWANDI_MAP = {
+  lat: 19.260723733379848,
+  lng: 73.04901796515453,
+  embed:
+    "https://www.google.com/maps?q=19.260723733379848,73.04901796515453&z=15&output=embed",
+  link: "https://www.google.com/maps?q=19.260723733379848,73.04901796515453",
 };
 
 export const PHOTOS = {
@@ -209,7 +219,9 @@ export const HUBS = [
     city: "Bhiwandi",
     code: "BHI",
     region: "Mumbai Metropolitan Region · Maharashtra",
-    role: "Western corridor gateway",
+    role: "Head Office · Western corridor gateway",
+    address:
+      "Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India",
     photo: PHOTOS.tunnel,
   },
   {

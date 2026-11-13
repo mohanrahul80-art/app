@@ -229,7 +229,7 @@ export const HUBS = [
     role: "Head Office · Western corridor gateway",
     address:
       "Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India",
-    photo: "/brand/bhiwandi-wh.webp",
+    photo: "/brand/bhiwandi-office.webp",
   },
   {
     city: "Nagpur",

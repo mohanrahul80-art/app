@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, HUBS, NAV_LINKS } from "../data/site";
 
 export default function Footer() {
@@ -54,6 +54,18 @@ export default function Footer() {
               <Mail className="h-3.5 w-3.5 text-ember shrink-0" />
               <a href={`mailto:${CONTACT.email}`} data-testid="footer-email-link" className="hover:text-bone transition-colors">
                 {CONTACT.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-2 text-sm text-steel">
+              <Linkedin className="h-3.5 w-3.5 text-ember shrink-0" />
+              <a
+                href={CONTACT.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-linkedin-link"
+                className="hover:text-bone transition-colors"
+              >
+                CoverEdge on LinkedIn
               </a>
             </li>
           </ul>

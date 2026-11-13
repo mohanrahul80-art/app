@@ -52,6 +52,10 @@ Build a website for a 3rd-party logistics (3PL) company using the attached logo 
 ## Implemented (2026-11-13, round 3b)
 - Visitor confirmation email: every enquiry now also sends a branded "we received your enquiry" message to the submitter (server-side template, reference + service + hub echoed). Verified — both owner alert and visitor confirmation returned HTTP 202.
 
+## Implemented (2026-11-13, round 4)
+- WhatsApp tap-to-chat button on Contact page (wa.me/919967399430 with prefilled message; click-to-chat, no WhatsApp API needed).
+- LinkedIn company page (linkedin.com/company/coveredge-marketing-pvt-ltd) linked in the header icon and footer.
+
 ## Backlog
 - P0: Send the real cool/cold temperature bands to replace the drafted 0–8°C / 8–15°C / 15–25°C ranges.
 - P1: Nagpur, New Delhi and Siliguri warehouse addresses + map pins (same pattern as Bhiwandi). Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.

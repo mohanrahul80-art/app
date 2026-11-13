@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Menu, Phone, X } from "lucide-react";
+import { ArrowUpRight, Linkedin, Menu, Phone, X } from "lucide-react";
 import Logo from "./Logo";
 import { CONTACT, NAV_LINKS } from "../data/site";
 
@@ -60,6 +60,16 @@ export default function Nav() {
           </div>
 
           <div className="flex items-center gap-3">
+            <a
+              href={CONTACT.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="nav-linkedin-link"
+              aria-label="CoverEdge Marketing on LinkedIn"
+              className="hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-steel hover:text-bone hover:border-ember transition-colors"
+            >
+              <Linkedin className="h-4 w-4" />
+            </a>
             <a
               href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}
               data-testid="nav-phone-badge"

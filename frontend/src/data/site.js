@@ -4,6 +4,8 @@ export const CONTACT = {
   phone: "+91 9967399430",
   email: "info@coveredgemarketing.com",
   hours: "Mon–Sat · 09:00–19:00 IST",
+  whatsapp: "919967399430",
+  linkedin: "https://www.linkedin.com/company/coveredge-marketing-pvt-ltd",
   headOffice:
     "CoverEdge Marketing Pvt. Ltd, Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India",
 };

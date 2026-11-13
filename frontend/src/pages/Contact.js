@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { CheckCircle2, Clock, Mail, MapPin, Phone, Send } from "lucide-react";
+import { CheckCircle2, Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import PageHeader from "../components/PageHeader";
 import { Reveal } from "../components/Reveal";
 import { CONTACT, HUBS, SERVICES } from "../data/site";
@@ -169,6 +169,27 @@ export default function Contact() {
           </div>
 
           <div className="lg:col-span-5 space-y-5">
+            <Reveal>
+              <a
+                href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
+                  "Hi CoverEdge, I'd like to discuss warehousing / logistics for my business."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="whatsapp-chat-button"
+                className="rounded-2xl border border-[#25D366]/40 bg-[#25D366]/10 p-6 flex items-center gap-4 hover:bg-[#25D366]/20 hover:border-[#25D366]/70 transition-colors duration-300"
+              >
+                <span className="h-12 w-12 shrink-0 rounded-full bg-[#25D366] flex items-center justify-center">
+                  <MessageCircle className="h-5 w-5 text-ink" />
+                </span>
+                <span>
+                  <span className="block font-semibold text-bone">Chat on WhatsApp</span>
+                  <span className="block mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                    Instant reply during working hours
+                  </span>
+                </span>
+              </a>
+            </Reveal>
             {[
               [Phone, "Call us", CONTACT.phone, `tel:${CONTACT.phone.replace(/\s/g, "")}`, "contact-phone-card"],
               [Mail, "Write to us", CONTACT.email, `mailto:${CONTACT.email}`, "contact-email-card"],

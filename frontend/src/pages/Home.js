@@ -441,10 +441,10 @@ function Clients() {
           </MaskLine>
         </h2>
         <Reveal delay={0.2}>
-          <div data-testid="clients-panel" className="mt-12 rounded-2xl border border-line bg-bone p-6 sm:p-12">
+          <div data-testid="clients-panel" className="mt-12 rounded-2xl border border-line bg-black p-6 sm:p-12">
             <img
               src="/brand/clients.png"
-              alt="CoverEdge esteemed clients — VetEdge, LikEdge, Cosmic Nutracos, Gaia, Vestige, Skinella, Proathlix, Lotus, WellGo Farms"
+              alt="CoverEdge esteemed clients — VetEdge, LikEdge, Cosmic Nutracos, Gaia, Vestige, Skinella, TI Medical, Proathlix, Lotus, WellGo Farms"
               data-testid="clients-image"
               className="w-full"
             />

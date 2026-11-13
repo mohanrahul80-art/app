@@ -97,7 +97,7 @@ export const SERVICES = [
       "E-commerce & retail drops",
       "Proof of delivery",
     ],
-    photo: PHOTOS.truckIn,
+    photo: "/brand/last-mile.jpg",
   },
   {
     slug: "kitting-packing",

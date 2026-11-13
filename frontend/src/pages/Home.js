@@ -96,7 +96,7 @@ function Hero() {
               src="/brand/logo-square.webp"
               alt="CoverEdge diamond mark"
               data-testid="hero-logo-mark"
-              className="logo-blend relative z-10 h-full w-full object-contain [filter:brightness(0.78)_saturate(0.92)_drop-shadow(0_0_60px_rgba(255,87,34,0.35))] [mask-image:radial-gradient(circle_at_center,black_60%,transparent_76%)]"
+              className="logo-blend relative z-10 h-full w-full object-contain [filter:brightness(0.6)_saturate(0.85)_drop-shadow(0_0_60px_rgba(255,87,34,0.35))] [mask-image:radial-gradient(circle_at_center,black_60%,transparent_76%)]"
             />
             {HUBS.map((h, i) => (
               <span

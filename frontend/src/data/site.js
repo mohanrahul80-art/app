@@ -243,7 +243,7 @@ export const HUBS = [
     code: "DEL",
     region: "National Capital Region",
     role: "North India supply chain hub",
-    photo: PHOTOS.trucks,
+    photo: "/brand/delhi-wh.jpg",
   },
   {
     city: "Siliguri",

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { CheckCircle2, Clock, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { CheckCircle2, Clock, Mail, MapPin, MessageCircle, Phone, Send, Star } from "lucide-react";
 import PageHeader from "../components/PageHeader";
 import { Reveal } from "../components/Reveal";
 import { CONTACT, HUBS, SERVICES } from "../data/site";
@@ -227,6 +227,26 @@ export default function Contact() {
                   ))}
                 </ul>
               </div>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <a
+                href={CONTACT.googleReview}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="google-review-button"
+                className="rounded-2xl border border-line bg-coal p-6 flex items-center gap-4 hover:border-ember/70 hover:bg-coal2 transition-all duration-300"
+              >
+                <span className="h-12 w-12 shrink-0 rounded-full bg-ember/15 border border-ember/40 flex items-center justify-center">
+                  <Star className="h-5 w-5 text-ember" />
+                </span>
+                <span>
+                  <span className="block font-semibold text-bone">Worked with us? Leave a Google review</span>
+                  <span className="block mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-steel">
+                    Takes less than a minute — helps others find us
+                  </span>
+                </span>
+              </a>
             </Reveal>
 
             <Reveal delay={0.15}>

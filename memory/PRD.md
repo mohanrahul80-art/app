@@ -56,6 +56,10 @@ Build a website for a 3rd-party logistics (3PL) company using the attached logo 
 - WhatsApp tap-to-chat button on Contact page (wa.me/919967399430 with prefilled message; click-to-chat, no WhatsApp API needed).
 - LinkedIn company page (linkedin.com/company/coveredge-marketing-pvt-ltd) linked in the header icon and footer.
 
+## Implemented (2026-11-13, round 5)
+- Google review button (g.page/r/CQnW9rOJHnPrEBM/review) on the Contact sidebar + footer link.
+- Facebook page (facebook.com/CoveredgeMarketing) linked in header icon and footer.
+
 ## Backlog
 - P0: Send the real cool/cold temperature bands to replace the drafted 0–8°C / 8–15°C / 15–25°C ranges.
 - P1: Nagpur, New Delhi and Siliguri warehouse addresses + map pins (same pattern as Bhiwandi). Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.

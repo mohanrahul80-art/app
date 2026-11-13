@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Linkedin, Menu, Phone, X } from "lucide-react";
+import { ArrowUpRight, Facebook, Linkedin, Menu, Phone, X } from "lucide-react";
 import Logo from "./Logo";
 import { CONTACT, NAV_LINKS } from "../data/site";
 
@@ -69,6 +69,16 @@ export default function Nav() {
               className="hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-steel hover:text-bone hover:border-ember transition-colors"
             >
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a
+              href={CONTACT.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="nav-facebook-link"
+              aria-label="CoverEdge Marketing on Facebook"
+              className="hidden md:inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-steel hover:text-bone hover:border-ember transition-colors"
+            >
+              <Facebook className="h-4 w-4" />
             </a>
             <a
               href={`tel:${CONTACT.phone.replace(/\s/g, "")}`}

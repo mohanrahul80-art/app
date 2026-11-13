@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Facebook, Linkedin, Mail, MapPin, Phone, Star } from "lucide-react";
 import { CONTACT, HUBS, NAV_LINKS } from "../data/site";
 
 export default function Footer() {
@@ -66,6 +66,30 @@ export default function Footer() {
                 className="hover:text-bone transition-colors"
               >
                 CoverEdge on LinkedIn
+              </a>
+            </li>
+            <li className="flex items-center gap-2 text-sm text-steel">
+              <Facebook className="h-3.5 w-3.5 text-ember shrink-0" />
+              <a
+                href={CONTACT.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-facebook-link"
+                className="hover:text-bone transition-colors"
+              >
+                CoverEdge on Facebook
+              </a>
+            </li>
+            <li className="flex items-center gap-2 text-sm text-steel">
+              <Star className="h-3.5 w-3.5 text-ember shrink-0" />
+              <a
+                href={CONTACT.googleReview}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-google-review-link"
+                className="hover:text-bone transition-colors"
+              >
+                Leave a Google review
               </a>
             </li>
           </ul>

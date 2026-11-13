@@ -13,10 +13,6 @@ export default function Footer() {
             data-testid="footer-logo"
             className="logo-blend w-full max-w-sm"
           />
-          <p className="mt-6 max-w-sm text-sm text-steel leading-relaxed">
-            Third-party logistics since 2012 — twelve capabilities from warehousing to customs
-            clearance and ERP integration, run from four Indian hubs.
-          </p>
         </div>
 
         <div>

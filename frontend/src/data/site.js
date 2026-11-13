@@ -127,7 +127,7 @@ export const SERVICES = [
       "Reconciliation & reporting",
       "Bank liaison support",
     ],
-    photo: PHOTOS.aerial,
+    photo: "/brand/cash-management.jpg",
   },
   {
     slug: "tax-compliance",

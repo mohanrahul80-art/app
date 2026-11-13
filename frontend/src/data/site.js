@@ -217,7 +217,7 @@ export const SERVICES = [
       "WMS & ERP connectivity",
       "Dashboards & MIS reporting",
     ],
-    photo: PHOTOS.truckMan,
+    photo: "/brand/erp.png",
   },
 ];
 

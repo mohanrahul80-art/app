@@ -59,7 +59,7 @@ function Hero() {
             </MaskLine>
           </h1>
           <Reveal delay={0.35}>
-            <p className="mt-8 max-w-xl text-base sm:text-lg text-steel leading-relaxed">
+            <p className="mt-8 max-w-xl font-display text-lg sm:text-2xl text-steel leading-snug tracking-wide">
               CoverEdge Marketing runs the warehouse floor so you can run your business — storage,
               fulfilment, transport and inventory across four hubs: Bhiwandi, Nagpur, New Delhi and
               Siliguri.

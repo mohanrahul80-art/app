@@ -172,7 +172,7 @@ export const SERVICES = [
       "Port & airport liaison",
       "Exam & follow-up handling",
     ],
-    photo: PHOTOS.tunnel,
+    photo: u("photo-1578575437130-527eed3abbec"),
   },
   {
     slug: "freight-forwarding",

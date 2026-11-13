@@ -15,6 +15,14 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)'
       },
       colors: {
+        ink: '#0B0C0E',
+        coal: '#12141A',
+        coal2: '#1A1D26',
+        line: '#1E222D',
+        ember: '#FF5722',
+        ember2: '#F95700',
+        steel: '#94A3B8',
+        bone: '#F8FAFC',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -47,14 +55,12 @@ module.exports = {
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        chart: {
-          '1': 'hsl(var(--chart-1))',
-          '2': 'hsl(var(--chart-2))',
-          '3': 'hsl(var(--chart-3))',
-          '4': 'hsl(var(--chart-4))',
-          '5': 'hsl(var(--chart-5))'
-        }
+        ring: 'hsl(var(--ring))'
+      },
+      fontFamily: {
+        display: ['Anton', 'Impact', 'sans-serif'],
+        sans: ['Manrope', 'ui-sans-serif', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
       },
       keyframes: {
         'accordion-down': {

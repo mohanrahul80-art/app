@@ -1,6 +1,6 @@
 import asyncio
 from contextlib import suppress
-from fastapi import FastAPI, APIRouter, Query
+from fastapi import FastAPI, APIRouter, Query, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -8,7 +8,7 @@ from pymongo import ASCENDING, DESCENDING, IndexModel
 import os
 import logging
 from pathlib import Path
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, Field, ConfigDict, EmailStr
 from typing import List
 import uuid
 from datetime import datetime, timezone
@@ -27,6 +27,10 @@ INDEXES: dict[str, list[IndexModel]] = {
     "status_checks": [
         IndexModel([("id", ASCENDING)], name="id", unique=True),
         IndexModel([("timestamp", DESCENDING)], name="timestamp_desc"),
+    ],
+    "enquiries": [
+        IndexModel([("reference", ASCENDING)], name="reference", unique=True),
+        IndexModel([("created_at", DESCENDING)], name="created_at_desc"),
     ],
 }
 
@@ -49,13 +53,41 @@ api_router = APIRouter(prefix="/api")
 # Define Models
 class StatusCheck(BaseModel):
     model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
-    
+
     id: str = Field(default_factory=lambda: str(uuid.uuid4()))
     client_name: str
     timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
 class StatusCheckCreate(BaseModel):
     client_name: str
+
+
+class EnquiryCreate(BaseModel):
+    name: str
+    email: EmailStr
+    phone: str
+    company: str = ""
+    service_required: str
+    hub_location: str = "Any / Multiple"
+    monthly_volume: str = ""
+    message: str = ""
+
+
+class Enquiry(BaseModel):
+    model_config = ConfigDict(extra="ignore")  # Ignore MongoDB's _id field
+
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    reference: str = Field(default_factory=lambda: "CE-" + uuid.uuid4().hex[:6].upper())
+    name: str
+    email: EmailStr
+    phone: str
+    company: str = ""
+    service_required: str
+    hub_location: str = "Any / Multiple"
+    monthly_volume: str = ""
+    message: str = ""
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
@@ -66,11 +98,11 @@ async def root():
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
-    
+
     # Convert to dict and serialize datetime to ISO string for MongoDB
     doc = status_obj.model_dump()
     doc['timestamp'] = doc['timestamp'].isoformat()
-    
+
     _ = await db.status_checks.insert_one(doc)
     return status_obj
 
@@ -78,13 +110,35 @@ async def create_status_check(input: StatusCheckCreate):
 async def get_status_checks(limit: int = Query(20, ge=1, le=100)):
     # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).sort("timestamp", -1).limit(limit).to_list(limit)
-    
+
     # Convert ISO string timestamps back to datetime objects
     for check in status_checks:
         if isinstance(check['timestamp'], str):
             check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
+
     return status_checks
+
+
+@api_router.post("/enquiries", response_model=Enquiry, status_code=201)
+async def create_enquiry(input: EnquiryCreate):
+    enquiry = Enquiry(**input.model_dump())
+    doc = enquiry.model_dump()
+    doc["created_at"] = doc["created_at"].isoformat()
+    try:
+        await db.enquiries.insert_one(doc)
+    except Exception:
+        raise HTTPException(status_code=500, detail="Could not save your enquiry. Please try again.")
+    return enquiry
+
+
+@api_router.get("/enquiries", response_model=List[Enquiry])
+async def get_enquiries(limit: int = Query(20, ge=1, le=100)):
+    rows = await db.enquiries.find({}, {"_id": 0}).sort("created_at", -1).limit(limit).to_list(limit)
+    for row in rows:
+        if isinstance(row.get("created_at"), str):
+            row["created_at"] = datetime.fromisoformat(row["created_at"])
+    return rows
+
 
 # Include the router in the main app
 app.include_router(api_router)

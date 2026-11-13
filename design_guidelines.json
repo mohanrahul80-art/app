@@ -1,0 +1,142 @@
+{
+  "project_identity": {
+    "brand_name": "CoverEdge Marketing Pvt. Ltd",
+    "industry": "3rd-Party Logistics (3PL) & Supply Chain Solutions",
+    "established_year": 2012,
+    "key_hubs": ["Bhiwandi (Mumbai MMR)", "Nagpur (Central Logistics Hub)", "New Delhi (NCR Corridor)", "Siliguri (North-East Gateway)"],
+    "archetype": "THE PERFORMANCE PRO / DARK INDUSTRIAL LUXURY",
+    "emotional_tone": "Precision, Institutional Authority, High-Velocity Execution, Industrial Sophistication"
+  },
+  "brand_assets": {
+    "square_full_logo": "https://customer-assets-7cd3h4nn.emergentagent.net/job_dfbbe383-a39f-4afa-a132-1184b926b675/artifacts/d36e410c9446acb3_IMG-20261112-WA0006.webp",
+    "square_mark_only": "https://customer-assets-7cd3h4nn.emergentagent.net/job_dfbbe383-a39f-4afa-a132-1184b926b675/artifacts/ccae021dbb89ca6c_1_20261112_200929_0000%281%29.webp",
+    "horizontal_logo": "https://customer-assets-7cd3h4nn.emergentagent.net/job_dfbbe383-a39f-4afa-a132-1184b926b675/artifacts/0d78d4dd0223d4d0_1_20261112_201000_0000%281%29%281%29%282%29.webp",
+    "favicon_svg_markup": "<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M16 2L2 16L16 30L30 16L16 2Z' fill='#FF5722'/><path d='M16 8L8 16L16 24L24 16L16 8Z' fill='#0B0C0E'/><path d='M16 11L11 16L16 21L21 16L16 11Z' fill='#FF5722'/></svg>"
+  },
+  "color_palette": {
+    "background_canvas": "#0B0C0E",
+    "surface_card": "#12141A",
+    "surface_card_hover": "#1A1D26",
+    "border_subtle": "#1E222D",
+    "border_active": "#FF5722",
+    "primary_orange": "#FF5722",
+    "primary_orange_glow": "rgba(255, 87, 34, 0.25)",
+    "accent_orange_bright": "#F95700",
+    "wordmark_grey": "#94A3B8",
+    "text_primary": "#F8FAFC",
+    "text_muted": "#94A3B8",
+    "text_dark_contrast": "#0B0C0E",
+    "tactical_green": "#10B981"
+  },
+  "typography": {
+    "heading_font": "Barlow Condensed / Cabinet Grotesk / sans-serif",
+    "body_font": "Inter / Plus Jakarta Sans / sans-serif",
+    "mono_font": "JetBrains Mono / monospace",
+    "scale": {
+      "h1_hero": "text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight uppercase leading-[0.95]",
+      "h2_section": "text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight uppercase leading-[1.05]",
+      "h3_card": "text-xl sm:text-2xl font-bold tracking-normal uppercase",
+      "body_lg": "text-base sm:text-lg text-slate-300 leading-relaxed",
+      "body_sm": "text-xs sm:text-sm text-slate-400 leading-normal",
+      "label_overline": "text-xs font-mono uppercase tracking-[0.25em] text-orange-500 font-semibold"
+    }
+  },
+  "layout_and_grids": {
+    "site_type": "Multi-page Corporate Marketing Site (React Router SPA + FastAPI Backend)",
+    "pages": [
+      {
+        "path": "/",
+        "name": "Home",
+        "key_sections": [
+          "Kinetic Hero with line-by-line masked text reveal & animated floating 3D diamond mark",
+          "Stats Banner (12+ Years, 4 Major Hubs, 1.5M+ Sq.Ft Managed, 99.8% On-Time Fulfillment)",
+          "Bento Grid Mode A: Core 3PL Pillars (Warehousing, Fulfilment, Transportation, Inventory, Value-Added)",
+          "Interactive Warehouse Network Map / Hub Selector (Bhiwandi, Nagpur, New Delhi, Siliguri)",
+          "Interactive 3PL Storage & Shipping Cost Estimator Widget",
+          "Slow Editorial Marquee of Industries Served (E-commerce, FMCG, Retail, Pharma, Electronics)",
+          "High-Impact Testimonials Carousel",
+          "Sticky Instant Quote CTA Banner"
+        ]
+      },
+      {
+        "path": "/about",
+        "name": "About Us",
+        "key_sections": [
+          "Story & Legacy since 2012",
+          "Core Values (Integrity, Speed, Security, Scalability)",
+          "Leadership & Operations Team",
+          "Compliance, Warehouse Standards & Safety Certifications (ISO 9001, WMS Tech Stack)",
+          "Client Success Metrics"
+        ]
+      },
+      {
+        "path": "/services",
+        "name": "Services",
+        "key_sections": [
+          "Deep-dive 3PL Service Cards with interactive feature toggles",
+          "1. Smart Warehousing (Multi-client & Dedicated facilities)",
+          "2. B2B & B2C Order Fulfilment (Pick & Pack, Same-Day Dispatch)",
+          "3. Transportation & Fleet Distribution (FTL/LTL, Express Delivery)",
+          "4. AI-driven Real-time Inventory Management (WMS Integration)",
+          "5. Value-Added Services (Kitting, Barcoding, Quality Checks, Returns Management)",
+          "Process Workflow (Inbound -> Storage -> Order Processing -> Outbound -> Tracking)"
+        ]
+      },
+      {
+        "path": "/warehouses",
+        "name": "Warehouses",
+        "key_sections": [
+          "Bhiwandi Hub (500,000 sq.ft, Western Corridor Gateway)",
+          "Nagpur Hub (350,000 sq.ft, Central India Distribution)",
+          "New Delhi Hub (400,000 sq.ft, NCR Supply Chain Hub)",
+          "Siliguri Hub (250,000 sq.ft, North-East Logistics Corridor)",
+          "Warehouse Specifications Grid (Clear height, Dock doors, Security, CCTV, Fire Suppression, FM2 Floor)"
+        ]
+      },
+      {
+        "path": "/contact",
+        "name": "Contact & Enquiry",
+        "key_sections": [
+          "Instant Quote / RFQ Form (Saves directly to FastAPI backend DB)",
+          "Direct Contact Cards (Phone: +91 98200 12345, Email: info@coveredge.in)",
+          "Head Office Address (Bhiwandi Logistics Hub, Thane-Bhiwandi Road, Maharashtra)",
+          "Interactive Location Selector & FAQ Accordion"
+        ]
+      }
+    ]
+  },
+  "motion_and_effects": {
+    "lenis_smooth_scroll": true,
+    "framer_motion": {
+      "kinetic_hero_masked_reveal": "Masked line reveal with cubic-bezier spring transition",
+      "bento_stagger": "Stagger children entrance delay 0.1s",
+      "card_hover_tilt": "Subtle 3D tilt on hover (-translate-y-1 + orange edge border glow)"
+    },
+    "marquee": "Slow, ultra-smooth continuous drift with low contrast grey/orange text",
+    "glassmorphism": "backdrop-blur-xl bg-[#0B0C0E]/80 border border-white/10 for header nav"
+  },
+  "image_urls": {
+    "hero_warehouse": "https://images.unsplash.com/photo-1592085198739-ffcad7f36b54?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NxM6OTV8MHwxfHNlYXJjaHwyfHx3YXJlaG91c2UlMjBpbnRlcmlvciUyMHJhY2tzJTIwZGlzdHJpYnV0aW9uJTIwbG9naXN0aWNzJTIwY2FyZ28lMjB3b3JrZXJ8ZW58MHx8fHwxNzk0NTQxNTg4fDA&ixlib=rb-4.1.0&q=85",
+    "truck_transport": "https://images.unsplash.com/photo-1571989928541-674d0cf46c4a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NxM6OTV8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjB3YXJlaG91c2UlMjBsb2dpc3RpY3MlMjBhdXRvbWF0ZWQlMjBmdWxmaWxsbWVudCUyMGNlbnRlciUyMHRydWNrJTIwdHJhbnNwb3J0fGVufDB8fHx8MTc5NDU0MTU4Mnww&ixlib=rb-4.1.0&q=85",
+    "aerial_hub": "https://images.unsplash.com/photo-1726776230760-ae81dc9d4e55?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NxM6OTV8MHwxfHNlYXJjaHwzfHxtb2Rlcm4lMjB3YXJlaG91c2UlMjBsb2dpc3RpY3MlMjBhdXRvbWF0ZWQlMjBmdWxmaWxsbWVudCUyMGNlbnRlciUyMHRydWNrJTIwdHJhbnNwb3J0fGVufDB8fHx8MTc5NDU0MTU4Mnww&ixlib=rb-4.1.0&q=85",
+    "fulfillment_worker": "https://images.unsplash.com/photo-1586528116022-aeda1613c63d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NxM6OTV8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBpbnRlcmlvciUyMHJhY2tzJTIwZGlzdHJpYnV0aW9uJTIwbG9naXN0aWNzJTIwY2FyZ28lMjB3b3JrZXJ8ZW58MHx8fHwxNzk0NTQxNTg4fDA&ixlib=rb-4.1.0&q=85",
+    "forklift_ops": "https://images.unsplash.com/photo-1532635042-a6f6ad4745f9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NxM6OTV8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3YXJlaG91c2UlMjBsb2dpc3RpY3MlMjBhdXRvbWF0ZWQlMjBmdWxmaWxsbWVudCUyMGNlbnRlciUyMHRydWNrJTIwdHJhbnNwb3J0fGVufDB8fHx8MTc5NDU0MTU4Mnww&ixlib=rb-4.1.0&q=85"
+  },
+  "technical_requirements": {
+    "data_testid_rule": "ALL interactive components, buttons, inputs, links, tabs, and form submissions MUST include distinct role-based kebab-case data-testid attributes (e.g. data-testid='nav-quote-button', data-testid='enquiry-submit-btn', data-testid='warehouse-hub-bhiwandi-card')",
+    "header_nav": "Sticky header with glassmorphism, brand horizontal logo asset, active page underline, contact phone badge, and 'Get RFQ Quote' CTA button",
+    "backend_api": {
+      "endpoint": "POST /api/enquiries",
+      "fields": ["name", "email", "phone", "company", "service_required", "hub_location", "monthly_volume", "message"],
+      "response": "Success JSON with reference number"
+    }
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Follow dark industrial luxury aesthetics (#0B0C0E background, #FF5722 orange brand triggers).",
+    "Never use generic centered layouts or plain white backgrounds.",
+    "Ensure generous spacing (p-8 to p-16) and distinct high contrast text.",
+    "All interactive and key informational elements MUST include data-testid attributes.",
+    "Use logo assets provided in brand_assets.",
+    "Include quote submission form connected to FastAPI backend with toast notifications via sonner."
+  ]
+}

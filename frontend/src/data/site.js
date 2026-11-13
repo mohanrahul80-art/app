@@ -67,7 +67,7 @@ export const SERVICES = [
       "Multi-hub corridor routing",
       "Delivery confirmations",
     ],
-    photo: PHOTOS.trucks,
+    photo: u("photo-1592805144716-feeccccef5ac"),
   },
   {
     slug: "forward-reverse",

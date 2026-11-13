@@ -142,7 +142,7 @@ export const SERVICES = [
       "Compliance audits",
       "Records & reporting",
     ],
-    photo: PHOTOS.worker,
+    photo: u("photo-1450101499163-c8848c66ca85"),
   },
   {
     slug: "retail-distribution",

@@ -250,7 +250,7 @@ export const HUBS = [
     code: "SIG",
     region: "North Bengal · West Bengal",
     role: "North-East gateway",
-    photo: PHOTOS.truckMan,
+    photo: "/brand/bhiwandi-wh.webp",
   },
 ];
 

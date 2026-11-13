@@ -1,10 +1,10 @@
 const u = (id) => `https://images.unsplash.com/${id}?q=85&w=1600&auto=format&fit=crop`;
 
 export const CONTACT = {
-  phone: "+91 9967399430",
+  phone: "+91 9272211123",
   email: "info@coveredgemarketing.com",
   hours: "Mon–Sat · 09:00–19:00 IST",
-  whatsapp: "919967399430",
+  whatsapp: "919272211123",
   linkedin: "https://www.linkedin.com/company/coveredge-marketing-pvt-ltd",
   facebook: "https://www.facebook.com/CoveredgeMarketing/",
   googleReview: "https://g.page/r/CQnW9rOJHnPrEBM/review",

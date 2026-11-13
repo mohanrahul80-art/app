@@ -176,7 +176,7 @@ async def confirm_to_visitor(e: "Enquiry") -> None:
         f'<td style="padding:10px 14px;font-size:14px;color:#0B0C0E">{escape(e.hub_location or "Any / Multiple")}</td></tr>'
         f'</table>'
         f'<p style="font-size:14px;color:#333;line-height:1.6">You can also reach us directly on '
-        f'<strong>+91 9967399430</strong> or reply to this email.</p>'
+        f'<strong>+91 9272211123</strong> or reply to this email.</p>'
         f'<p style="padding-top:12px;font-size:12px;color:#888">CoverEdge Marketing Pvt. Ltd · '
         f'Warehousing &amp; 3PL since 2012 · Bhiwandi · Nagpur · New Delhi · Siliguri</p>'
         f'</td></tr></table>'

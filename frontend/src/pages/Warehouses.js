@@ -5,7 +5,7 @@ import PageHeader from "../components/PageHeader";
 import { MaskLine, Reveal } from "../components/Reveal";
 import { HUBS } from "../data/site";
 
-const CHIPS = ["Warehousing", "Fulfilment", "Transportation", "Inventory", "Value-added"];
+const CHIPS = ["Warehousing", "Distribution", "Last Mile", "Customs", "Freight Forwarding"];
 
 export default function Warehouses() {
   useEffect(() => {

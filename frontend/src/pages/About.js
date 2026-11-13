@@ -22,7 +22,7 @@ export default function About() {
       <PageHeader
         eyebrow="About CoverEdge"
         lines={["Built to", <>carry <span className="text-ember">more.</span></>]}
-        meta={[["Established", "2012"], ["Warehouse hubs", "04"], ["Service lines", "05"]]}
+        meta={[["Established", "2012"], ["Warehouse hubs", "04"], ["Service lines", "12"]]}
       />
 
       <section className="py-20 sm:py-28">

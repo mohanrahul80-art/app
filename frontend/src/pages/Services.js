@@ -13,12 +13,12 @@ export default function Services() {
     <>
       <PageHeader
         eyebrow="Services"
-        lines={["Five capabilities,", <>one <span className="text-ember">roof.</span></>]}
-        meta={[["Scope", "Warehousing to doorstep"], ["Network", "West · Central · North · East"]]}
+        lines={["Twelve capabilities,", <>one <span className="text-ember">roof.</span></>]}
+        meta={[["Scope", "Warehousing to ERP integration"], ["Network", "West · Central · North · East"]]}
       />
 
       {SERVICES.map((s, i) => (
-        <section key={s.slug} data-testid={`service-section-${s.slug}`} className="border-t border-line">
+        <section key={s.slug} id={s.slug} data-testid={`service-section-${s.slug}`} className="border-t border-line scroll-mt-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 py-16 sm:py-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <Reveal className={i % 2 ? "lg:order-2" : ""}>
               <div className="group relative overflow-hidden rounded-2xl border border-line">
@@ -62,7 +62,7 @@ export default function Services() {
         <div aria-hidden className="absolute bottom-[-40%] right-[-10%] h-[420px] w-[620px] rounded-full bg-ember/15 blur-[140px]" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 py-20 sm:py-24">
           <h2 className="font-display uppercase leading-[0.95] text-4xl sm:text-6xl">
-            <MaskLine>Need all five?</MaskLine>
+            <MaskLine>Need all twelve?</MaskLine>
             <MaskLine delay={0.12}>
               <span className="text-steel">
                 That's the <span className="text-ember">point.</span>

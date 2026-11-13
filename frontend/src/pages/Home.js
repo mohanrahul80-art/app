@@ -8,18 +8,45 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowUpRight, BarChart3, Boxes, Layers, Truck, Warehouse } from "lucide-react";
+import {
+  ArrowLeftRight,
+  ArrowRightLeft,
+  ArrowUpRight,
+  Banknote,
+  Cpu,
+  FileCheck,
+  MapPin,
+  Package,
+  Route,
+  Ship,
+  Stamp,
+  Store,
+  Warehouse,
+} from "lucide-react";
 import Marquee from "../components/Marquee";
 import { EASE, MaskLine, Reveal } from "../components/Reveal";
 import { CONTACT, HUBS, PHOTOS, SERVICES } from "../data/site";
 
-const ICONS = { Warehouse, Boxes, Truck, BarChart3, Layers };
-const MARQUEE = SERVICES.map((s) => s.title);
+const ICONS = {
+  Warehouse,
+  Route,
+  ArrowLeftRight,
+  MapPin,
+  Package,
+  Banknote,
+  FileCheck,
+  Store,
+  Stamp,
+  Ship,
+  ArrowRightLeft,
+  Cpu,
+};
+const MARQUEE = SERVICES.map((s) => s.short);
 
 const STATS = [
   ["Established", "2012"],
   ["Warehouse hubs", "04"],
-  ["Service lines", "05"],
+  ["Service lines", "12"],
   ["Gateway cities", "BHI·NAG·DEL·SIG"],
 ];
 
@@ -156,42 +183,60 @@ function PhotoBand() {
   );
 }
 
-function ServiceCell({ s, i, photo = true, className = "" }) {
+function ServiceCard({ s, i }) {
   const Icon = ICONS[s.icon];
   return (
-    <Reveal delay={0.07 * i} className={className}>
-      <Link
-        to="/services"
-        data-testid={`service-card-${s.slug}`}
-        className="group relative block h-64 sm:h-72 overflow-hidden rounded-2xl border border-line bg-coal hover:border-ember/60 transition-colors duration-300"
-      >
-        {photo ? (
-          <>
-            <img
-              src={s.photo}
-              alt={s.title}
-              className="absolute inset-0 h-full w-full object-cover opacity-45 transition-all duration-700 group-hover:opacity-60 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-          </>
-        ) : (
-          <span aria-hidden className="text-stroke-steel absolute -bottom-8 right-2 font-display text-[10rem] leading-none opacity-25">
-            0{i + 1}
-          </span>
-        )}
-        <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-7">
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-[11px] text-steel">0{i + 1}</span>
-            <Icon className="h-5 w-5 text-ember" />
-          </div>
-          <div>
-            <h3 className="font-display uppercase text-2xl sm:text-3xl text-bone">{s.title}</h3>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-ember">{s.tag}</p>
-            <p className="mt-3 max-w-md text-sm text-steel leading-relaxed line-clamp-2">{s.desc}</p>
-          </div>
+    <Link
+      to={`/services#${s.slug}`}
+      data-testid={`service-card-${s.slug}`}
+      className="group flex flex-col justify-between min-h-56 rounded-2xl border border-line bg-coal p-5 sm:p-6 hover:border-ember/60 hover:-translate-y-1 transition-all duration-300"
+    >
+      <div className="flex items-center justify-between">
+        <span className="font-mono text-[11px] text-steel">{String(i + 1).padStart(2, "0")}</span>
+        <Icon className="h-5 w-5 text-ember" />
+      </div>
+      <div className="mt-6">
+        <h3 className="font-display uppercase text-xl text-bone leading-tight">{s.title}</h3>
+        <p className="mt-2 text-xs text-steel leading-relaxed line-clamp-3">{s.desc}</p>
+      </div>
+    </Link>
+  );
+}
+
+function FeatureCard({ s, photo = true, className = "" }) {
+  const Icon = ICONS[s.icon];
+  return (
+    <Link
+      to={`/services#${s.slug}`}
+      data-testid={`service-feature-${s.slug}`}
+      className="group relative block h-64 sm:h-80 overflow-hidden rounded-2xl border border-line bg-coal hover:border-ember/60 transition-colors duration-300"
+    >
+      {photo ? (
+        <>
+          <img
+            src={s.photo}
+            alt={s.title}
+            className="absolute inset-0 h-full w-full object-cover opacity-45 transition-all duration-700 group-hover:opacity-60 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+        </>
+      ) : (
+        <span aria-hidden className="text-stroke-steel absolute -bottom-10 right-0 font-display text-[12rem] leading-none opacity-25">
+          01
+        </span>
+      )}
+      <div className="relative z-10 h-full flex flex-col justify-between p-6 sm:p-8">
+        <div className="flex items-center justify-between">
+          <span className="font-mono text-[11px] text-steel">01</span>
+          <Icon className="h-6 w-6 text-ember" />
         </div>
-      </Link>
-    </Reveal>
+        <div>
+          <h3 className="font-display uppercase text-3xl sm:text-4xl text-bone">{s.title}</h3>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-ember">{s.tag}</p>
+          <p className="mt-3 max-w-md text-sm text-steel leading-relaxed line-clamp-2">{s.desc}</p>
+        </div>
+      </div>
+    </Link>
   );
 }
 
@@ -205,7 +250,7 @@ function Bento() {
               <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">What we do</p>
             </Reveal>
             <h2 className="mt-4 font-display uppercase leading-[0.95] text-4xl sm:text-6xl">
-              <MaskLine>Five capabilities.</MaskLine>
+              <MaskLine>Twelve capabilities.</MaskLine>
               <MaskLine delay={0.12}>
                 <span className="text-steel">
                   One <span className="text-ember">partner.</span>
@@ -224,12 +269,19 @@ function Bento() {
           </Reveal>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          <ServiceCell s={SERVICES[0]} i={0} photo className="md:col-span-2" />
-          <ServiceCell s={SERVICES[1]} i={1} photo />
-          <ServiceCell s={SERVICES[2]} i={2} photo={false} />
-          <ServiceCell s={SERVICES[3]} i={3} photo />
-          <ServiceCell s={SERVICES[4]} i={4} photo={false} />
+        <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <Reveal className="lg:row-span-2">
+            <FeatureCard s={SERVICES[0]} photo className="h-full" />
+          </Reveal>
+          <Reveal className="sm:col-span-2">
+            <div className="grid gap-5 sm:grid-cols-2">
+              {SERVICES.slice(1).map((s, i) => (
+                <Reveal key={s.slug} delay={0.05 * i}>
+                  <ServiceCard s={s} i={i + 1} />
+                </Reveal>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
@@ -301,7 +353,7 @@ function Network() {
                   </Link>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
-                  {["Warehousing", "Fulfilment", "Transportation", "Inventory", "Value-added"].map((c) => (
+                  {SERVICES.slice(0, 5).map((s) => s.short).map((c) => (
                     <span key={c} className="font-mono text-[10px] uppercase tracking-[0.15em] text-steel border border-line rounded-full px-3 py-1.5">
                       {c}
                     </span>
@@ -318,7 +370,7 @@ function Network() {
 
 const WHY = [
   ["Years, not quarters", "In business since 2012 — client relationships here are measured in years, not procurement cycles."],
-  ["One partner", "Five capabilities under one roof. One call covers storage, dispatch, transit and stock."],
+  ["One partner", "Twelve capabilities under one roof. One call covers storage, dispatch, customs, cash and systems."],
   ["Four hubs", "West, Central, North and East — positioned where India's freight corridors already cross."],
   ["Systems first", "WMS-driven stock visibility from dock to doorstep, with exceptions flagged before they cost you."],
 ];

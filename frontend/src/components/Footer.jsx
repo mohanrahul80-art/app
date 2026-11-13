@@ -14,8 +14,8 @@ export default function Footer() {
             className="logo-blend w-full max-w-sm"
           />
           <p className="mt-6 max-w-sm text-sm text-steel leading-relaxed">
-            Third-party logistics since 2012 — warehousing, order fulfilment, transportation, inventory
-            management and value-added services across four Indian hubs.
+            Third-party logistics since 2012 — twelve capabilities from warehousing to customs
+            clearance and ERP integration, run from four Indian hubs.
           </p>
         </div>
 

@@ -23,11 +23,18 @@ function initLenis() {
 }
 
 function ScrollManager() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "instant", block: "start" });
+        return;
+      }
+    }
     if (lenis) lenis.scrollTo(0, { immediate: true });
     else window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

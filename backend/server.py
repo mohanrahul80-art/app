@@ -152,6 +152,41 @@ async def notify_enquiry(e: "Enquiry") -> None:
         logger.error("Enquiry email notification failed for %s: %s", e.reference, exc)
 
 
+async def confirm_to_visitor(e: "Enquiry") -> None:
+    if not EMAIL_KEY:
+        logger.warning("Visitor confirmation skipped: EMERGENT_EMAIL_KEY not set")
+        return
+    subject = f"We received your enquiry — {e.reference}"
+    html = (
+        '<table role="presentation" width="100%" style="font-family:Arial,sans-serif">'
+        f'<tr><td style="padding:24px;background:#0B0C0E;color:#FF5722;font-size:20px;font-weight:bold">'
+        f'{escape(EMAIL_FROM_NAME)}</td></tr>'
+        f'<tr><td style="padding:24px">'
+        f'<p style="font-size:15px;color:#0B0C0E">Dear {escape(e.name)},</p>'
+        f'<p style="font-size:14px;color:#333;line-height:1.6">Thank you for reaching out to '
+        f'{escape(EMAIL_FROM_NAME)}. We have received your enquiry regarding '
+        f'<strong>{escape(e.service_required)}</strong> and our team will get back to you shortly '
+        f'with the details you requested.</p>'
+        f'<table role="presentation" width="100%" style="margin:16px 0;border:1px solid #eee">'
+        f'<tr><td style="padding:10px 14px;color:#94A3B8;font-size:12px;text-transform:uppercase;letter-spacing:1px">Reference</td>'
+        f'<td style="padding:10px 14px;font-size:14px;color:#0B0C0E;font-weight:bold">{escape(e.reference)}</td></tr>'
+        f'<tr><td style="padding:10px 14px;color:#94A3B8;font-size:12px;text-transform:uppercase;letter-spacing:1px">Service</td>'
+        f'<td style="padding:10px 14px;font-size:14px;color:#0B0C0E">{escape(e.service_required)}</td></tr>'
+        f'<tr><td style="padding:10px 14px;color:#94A3B8;font-size:12px;text-transform:uppercase;letter-spacing:1px">Preferred hub</td>'
+        f'<td style="padding:10px 14px;font-size:14px;color:#0B0C0E">{escape(e.hub_location or "Any / Multiple")}</td></tr>'
+        f'</table>'
+        f'<p style="font-size:14px;color:#333;line-height:1.6">You can also reach us directly on '
+        f'<strong>+91 9967399430</strong> or reply to this email.</p>'
+        f'<p style="padding-top:12px;font-size:12px;color:#888">CoverEdge Marketing Pvt. Ltd · '
+        f'Warehousing &amp; 3PL since 2012 · Bhiwandi · Nagpur · New Delhi · Siliguri</p>'
+        f'</td></tr></table>'
+    )
+    try:
+        await send_email(to=e.email, subject=subject, html=html)
+    except Exception as exc:
+        logger.error("Visitor confirmation failed for %s: %s", e.reference, exc)
+
+
 # One entry per collection: every field a route filters, sorts or dedupes on. Add the index in the same edit as the query.
 INDEXES: dict[str, list[IndexModel]] = {
     "status_checks": [
@@ -259,6 +294,7 @@ async def create_enquiry(input: EnquiryCreate):
     except Exception:
         raise HTTPException(status_code=500, detail="Could not save your enquiry. Please try again.")
     asyncio.create_task(notify_enquiry(enquiry))
+    asyncio.create_task(confirm_to_visitor(enquiry))
     return enquiry
 
 

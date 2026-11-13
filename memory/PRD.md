@@ -49,6 +49,9 @@ Build a website for a 3rd-party logistics (3PL) company using the attached logo 
 - Bhiwandi head office address added: Warehouse No. 7 & 8, Building No. B11, Parasnath Complex, Dapoda Road, Bhiwandi - 421302, Maharashtra, India.
 - Live Google map embed (coords 19.2607, 73.0490, dark-styled) in a "Find the head office" block on the Warehouses page + compact map on the Contact page; "Get directions" link added; address shown on the Bhiwandi hub card and Contact address card.
 
+## Implemented (2026-11-13, round 3b)
+- Visitor confirmation email: every enquiry now also sends a branded "we received your enquiry" message to the submitter (server-side template, reference + service + hub echoed). Verified — both owner alert and visitor confirmation returned HTTP 202.
+
 ## Backlog
 - P0: Send the real cool/cold temperature bands to replace the drafted 0–8°C / 8–15°C / 15–25°C ranges.
 - P1: Nagpur, New Delhi and Siliguri warehouse addresses + map pins (same pattern as Bhiwandi). Enquiry inbox/admin view to read submissions. Real working hours if different from Mon–Sat 09:00–19:00.

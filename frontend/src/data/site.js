@@ -21,7 +21,7 @@ export const BHIWANDI_MAP = {
 };
 
 export const PHOTOS = {
-  band: u("photo-1592085198739-ffcad7f36b54"),
+  band: u("photo-1553413077-190dd305871c"),
   racks: u("photo-1689942010216-dc412bb1e7a9"),
   forklift: u("photo-1740914994657-f1cdffdc418e"),
   forklift2: u("photo-1532635042-a6f6ad4745f9"),
@@ -33,6 +33,9 @@ export const PHOTOS = {
   aerial: u("photo-1726776230760-ae81dc9d4e55"),
   modernTruck: u("photo-1571989928541-674d0cf46c4a"),
   truckMan: u("photo-1716512060259-d114cfba13e8"),
+  ship: u("photo-1494412574643-ff11b0a5c1c3"),
+  plane: u("photo-1436491865332-7a61a109cc05"),
+  truckFleet: u("photo-1635774152029-17bf0a3e1cb4"),
 };
 
 export const SERVICES = [

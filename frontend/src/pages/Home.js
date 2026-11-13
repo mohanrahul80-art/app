@@ -24,6 +24,7 @@ import {
   Warehouse,
 } from "lucide-react";
 import Marquee from "../components/Marquee";
+import { Mark } from "../components/Logo";
 import { EASE, MaskLine, Reveal } from "../components/Reveal";
 import { CONTACT, HUBS, PHOTOS, SERVICES } from "../data/site";
 
@@ -123,7 +124,7 @@ function Hero() {
               src="/brand/logo-square.webp"
               alt="CoverEdge diamond mark"
               data-testid="hero-logo-mark"
-              className="logo-blend relative z-10 h-full w-full object-contain [filter:brightness(0.6)_saturate(0.85)_drop-shadow(0_0_60px_rgba(255,87,34,0.35))] [mask-image:radial-gradient(circle_at_center,black_60%,transparent_76%)]"
+              className="logo-blend relative z-10 h-full w-full object-contain [filter:brightness(0.75)_contrast(1.4)_saturate(1.1)_drop-shadow(0_0_60px_rgba(255,87,34,0.35))] [mask-image:radial-gradient(circle_at_center,black_60%,transparent_76%)]"
             />
             {HUBS.map((h, i) => (
               <span
@@ -375,6 +376,90 @@ const WHY = [
   ["Systems first", "WMS-driven stock visibility from dock to doorstep, with exceptions flagged before they cost you."],
 ];
 
+const TRANSPORTS = [
+  { label: "Surface", title: "Modern Trucking", photo: PHOTOS.modernTruck, note: "Owned corridors, vetted fleets" },
+  { label: "Ocean", title: "Sea Freight", photo: PHOTOS.ship, note: "FCL & LCL, port to door" },
+  { label: "Air", title: "Air Cargo", photo: PHOTOS.plane, note: "When the clock wins" },
+];
+
+function TransportShowcase() {
+  return (
+    <section className="py-20 sm:py-28 border-t border-line bg-coal/30">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal y={16}>
+          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">How we move it</p>
+        </Reveal>
+        <h2 className="mt-4 font-display uppercase leading-[0.95] text-4xl sm:text-6xl">
+          <MaskLine>Road. Sea.</MaskLine>
+          <MaskLine delay={0.12}>
+            <span className="text-steel">
+              And <span className="text-ember">air.</span>
+            </span>
+          </MaskLine>
+        </h2>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {TRANSPORTS.map((t, i) => (
+            <Reveal key={t.title} delay={0.08 * i}>
+              <div
+                data-testid={`transport-panel-${t.label.toLowerCase()}`}
+                className="group relative overflow-hidden rounded-2xl border border-line h-80 sm:h-96 hover:border-ember/60 transition-colors duration-300"
+              >
+                <img
+                  src={t.photo}
+                  alt={`${t.title} — CoverEdge Marketing`}
+                  className="absolute inset-0 h-full w-full object-cover opacity-70 transition-all duration-700 group-hover:opacity-90 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/40" />
+                <div className="absolute top-5 left-5 z-10 flex items-center gap-2.5 bg-ink/80 border border-line rounded-full pl-2 pr-4 py-1.5">
+                  <Mark className="h-5 w-5" />
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-steel">{t.label}</span>
+                </div>
+                <div className="absolute bottom-0 inset-x-0 z-10 p-6">
+                  <p className="font-display uppercase text-2xl sm:text-3xl text-bone">{t.title}</p>
+                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-ember">{t.note}</p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Clients() {
+  return (
+    <section className="py-20 sm:py-28 border-t border-line">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <Reveal y={16}>
+          <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-ember">Trusted since 2012</p>
+        </Reveal>
+        <h2 className="mt-4 font-display uppercase leading-[0.95] text-4xl sm:text-6xl">
+          <MaskLine>Our esteemed</MaskLine>
+          <MaskLine delay={0.12}>
+            <span className="text-steel">clients.</span>
+          </MaskLine>
+        </h2>
+        <Reveal delay={0.2}>
+          <div data-testid="clients-panel" className="mt-12 rounded-2xl border border-line bg-bone p-6 sm:p-12">
+            <img
+              src="/brand/clients.png"
+              alt="CoverEdge esteemed clients — VetEdge, LikEdge, Cosmic Nutracos, Gaia, Vestige, Skinella, Proathlix, Lotus, WellGo Farms"
+              data-testid="clients-image"
+              className="w-full"
+            />
+          </div>
+        </Reveal>
+        <Reveal delay={0.25}>
+          <p className="mt-6 text-sm text-steel">
+            Brands across nutraceuticals, cosmetics, wellness and agri — served from our four hubs.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Why() {
   return (
     <section className="py-20 sm:py-28 border-t border-line">
@@ -446,6 +531,8 @@ export default function Home() {
       <Bento />
       <Marquee items={MARQUEE} />
       <Network />
+      <TransportShowcase />
+      <Clients />
       <Why />
       <CTA />
     </>
